@@ -1,5 +1,0 @@
-Description,Classification
-"A Dockerfile instruction that is identical to the previous build and appears after no modified instructions.",CACHE_REUSED
-"The specific Dockerfile instruction whose text you edited between the first and second build.",CACHE_INVALIDATED
-"An instruction that did not change, but comes after the edited instruction in the Dockerfile.",CASCADE_REBUILD
-"Assigning a different image name or version using the -t flag during a build while leaving the Dockerfile unchanged.",TAG_OPERATION
