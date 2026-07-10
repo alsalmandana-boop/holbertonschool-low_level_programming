@@ -1,5 +1,4 @@
 #include <stdio.h>
-Print alphabet except e and q
 /**
  * main - Prints the alphabet in lowercase except q and e
  *
