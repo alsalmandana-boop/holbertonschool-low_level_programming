@@ -21,4 +21,3 @@ int main(void)
 
 	return (0);
 }
-3-print_alphabets.c
