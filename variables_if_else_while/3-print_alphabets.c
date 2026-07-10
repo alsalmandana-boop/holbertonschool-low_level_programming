@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * main - Prints the alphabet in lowercase
+ * main - prints the alphabet in lowercase and uppercase
  *
  * Return: Always 0 (Success)
  */
@@ -17,8 +17,15 @@ int main(void)
 		c++;
 	}
 
+	c = 'A';
+
+	while (c <= 'Z')
+	{
+		putchar(c);
+		c++;
+	}
+
 	putchar('\n');
 
 	return (0);
 }
-3-print_alphabets.c
