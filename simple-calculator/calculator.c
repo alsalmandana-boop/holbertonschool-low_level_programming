@@ -3,8 +3,8 @@
 int main(void)
 {
 	int choice;
-	int A ;
-	int B ;
+	int A;
+	int B;
 
 	printf("Simple Calculator\n");
 	do
