@@ -42,6 +42,15 @@ int main(void)
 		printf("B: ");
 		scanf("%d", &B);
 		printf("Result: %d\n", A - B);}
+
+		if (choice == 3)
+		{
+		printf("A: ");
+		scanf("%d", &A);
+		printf("B: ");
+		scanf("%d", &B);
+		printf("Result: %d\n", A * B);
+		}
 	} 
 	while (choice != 0);
 
