@@ -7,8 +7,7 @@ int main(void)
 	int B;
 
 	printf("Simple Calculator\n");
-	do
-	{
+	do {
 		printf("1) Add\n");
 		printf("2) Subtract\n");
 		printf("3) Multiply\n");
@@ -41,7 +40,8 @@ int main(void)
 		scanf("%d", &A);
 		printf("B: ");
 		scanf("%d", &B);
-		printf("Result: %d\n", A - B);}
+		printf("Result: %d\n", A - B);
+		}
 
 		if (choice == 3)
 		{
@@ -51,8 +51,24 @@ int main(void)
 		scanf("%d", &B);
 		printf("Result: %d\n", A * B);
 		}
+
+		if (choice == 4)
+		{
+		printf("A: ");
+		scanf("%d", &A);
+		printf("B: ");
+		scanf("%d", &B);
+		if (B == 0)
+		{
+		printf("Error: Division by zero\n");
+		}
+		else
+		{
+		printf("Result: %d\n", A / B);
+		}
+		}
 	} 
 	while (choice != 0);
 
 	return (0);
-	}
+}
