@@ -1,29 +1,14 @@
-#include <stdio.h>
-#include <time.h>
+Run 1
 
-#define ITERATION_COUNT 100000000UL
+Iterations: 100000000
+Execution time: 0.248933 seconds
 
-int main(void)
-{
-    volatile unsigned long long result;
-    clock_t start;
-    clock_t end;
-    double elapsed;
-    unsigned long i;
+Run 2
 
-    result = 0;
+Iterations: 100000000
+Execution time: 0.230207 seconds
 
-    start = clock();
+Run 3
 
-    for (i = 0; i < ITERATION_COUNT; i++)
-        result += (unsigned long long)(i % 3);
-
-    end = clock();
-
-    elapsed = (double)(end - start) / (double)CLOCKS_PER_SEC;
-
-    printf("Iterations: %lu\n", (unsigned long)ITERATION_COUNT);
-    printf("Execution time: %.6f seconds\n", elapsed);
-
-    return 0;
-}
+Iterations: 100000000
+Execution time: 0.230642 seconds
