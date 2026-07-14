@@ -54,7 +54,22 @@ int main(void)
 {
     unsigned long checksum;
 
-    /* Students must add clock-based timing and print required lines. */
+/* متغيرات الوقت */
+    clock_t total_start;
+    clock_t total_end;
+    clock_t build_start;
+    clock_t build_end;
+    clock_t process_start;
+    clock_t process_end;
+    clock_t reduce_start;
+    clock_t reduce_end;
+
+    /* متغيرات الزمن بالثواني */
+    double total_seconds;
+    double build_seconds;
+    double process_seconds;
+    double reduce_seconds;
+
 
     build_dataset();
     process_dataset();
