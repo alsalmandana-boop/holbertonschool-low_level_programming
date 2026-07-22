@@ -8,43 +8,42 @@
  *
  * Return: pointer to the grid, or NULL on failure
  */
-int **alloc_grid(int width, int heights)
+int **alloc_grid(int width, int height)
 {
 	int **grid;
+	int row;
+	int col;
 
-	if (width <= 0 || heights <= 0)
+	if (width <= 0 || height <= 0)
 		return (NULL);
 
-	grid = malloc(sizeof(int *) * heights);
-
+	grid = malloc(sizeof(int *) * height);
 	if (grid == NULL)
 		return (NULL);
 
-	width = 0;
-	while (width < heights)
+	row = 0;
+	while (row < height)
 	{
-		grid[width] = malloc(sizeof(int) * width);
-
-		if (grid[width] == NULL)
+		grid[row] = malloc(sizeof(int) * width);
+		if (grid[row] == NULL)
 		{
-			while (width > 0)
+			while (row > 0)
 			{
-				width--;
-				free(grid[width]);
+				row--;
+				free(grid[row]);
 			}
-
 			free(grid);
 			return (NULL);
 		}
 
-		heights = 0;
-		while (heights < width)
+		col = 0;
+		while (col < width)
 		{
-			grid[width][heights] = 0;
-			width++;
+			grid[row][col] = 0;
+			col++;
 		}
 
-		width++;
+		row++;
 	}
 
 	return (grid);
