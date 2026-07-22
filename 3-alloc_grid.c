@@ -39,7 +39,7 @@ int **alloc_grid(int width, int heights)
 			return (NULL);
 		}
 
-		col = 0;
+		hei = 0;
 		while (hei < wid)
 		{
 			grid[wid][hei] = 0;
