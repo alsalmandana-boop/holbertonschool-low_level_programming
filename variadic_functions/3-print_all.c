@@ -1,13 +1,11 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include "variadic_functions.h"
-
 /**
- * struct printer - associates a format character with a print function
- * @symbol: format character
- * @print: function used to print the corresponding argument
  * print_char - prints a character
- * @args: variable argument list
+ * @args: list containing the character to print
+ *
+ * Return: Nothing
  */
 void print_char(va_list args)
 {
@@ -16,7 +14,9 @@ void print_char(va_list args)
 
 /**
  * print_integer - prints an integer
- * @args: variable argument list
+ * @args: list containing the integer to print
+ *
+ * Return: Nothing
  */
 void print_integer(va_list args)
 {
@@ -24,8 +24,10 @@ void print_integer(va_list args)
 }
 
 /**
- * print_float - prints a float
- * @args: variable argument list
+ * print_float - prints a floating-point number
+ * @args: list containing the floating-point number to print
+ *
+ * Return: Nothing
  */
 void print_float(va_list args)
 {
@@ -34,7 +36,9 @@ void print_float(va_list args)
 
 /**
  * print_string - prints a string
- * @args: variable argument list
+ * @args: list containing the string to print
+ *
+ * Return: Nothing
  */
 void print_string(va_list args)
 {
@@ -48,46 +52,12 @@ void print_string(va_list args)
 }
 
 /**
- * print_all - prints arguments according to a format string
- * @format: list of argument types
+ * print_all - prints arguments based on a format string
+ * @format: string specifying the argument types
  *
  * Return: Nothing
  */
 void print_all(const char * const format, ...)
 {
-	unsigned int i;
-	unsigned int j;
-	char *separator;
-	va_list args;
-	printer_t printers[] = {
-		{"c", print_char},
-		{"i", print_integer},
-		{"f", print_float},
-		{"s", print_string},
-		{NULL, NULL}
-	};
-
-	i = 0;
-	separator = "";
-	va_start(args, format);
-
-	while (format != NULL && format[i] != '\0')
-	{
-		j = 0;
-		while (printers[j].symbol != NULL)
-		{
-			if (format[i] == printers[j].symbol[0])
-			{
-				printf("%s", separator);
-				printers[j].print(args);
-				separator = ", ";
-			}
-			j++;
-		}
-		i++;
-	}
-
-	va_end(args);
-	printf("\n");
+	/* your function body */
 }
-
