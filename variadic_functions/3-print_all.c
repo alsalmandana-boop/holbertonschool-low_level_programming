@@ -6,14 +6,6 @@
  * struct printer - associates a format character with a print function
  * @symbol: format character
  * @print: function used to print the corresponding argument
- */
-typedef struct printer
-{
-	char *symbol;
-	void (*print)(va_list);
-} printer_t;
-
-/**
  * print_char - prints a character
  * @args: variable argument list
  */
