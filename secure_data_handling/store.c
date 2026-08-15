@@ -3,7 +3,7 @@
 #include "store.h"
 
 /**
- * store_init - initializes a session store
+ * store_init - initializes a store
  * @st: store to initialize
  */
 void store_init(store_t *st)
@@ -13,7 +13,7 @@ void store_init(store_t *st)
 }
 
 /**
- * node_create - creates a new store node
+ * node_create - creates a new node
  * @s: session to store
  *
  * Return: pointer to new node, or NULL on failure
@@ -34,7 +34,7 @@ static node_t *node_create(session_t *s)
 
 /**
  * store_add - adds a session to the store
- * @st: session store
+ * @st: store
  * @s: session to add
  *
  * Return: 1 on success, 0 on failure
@@ -52,14 +52,20 @@ int store_add(store_t *st, session_t *s)
 	{
 		if (cur->sess && cur->sess->id &&
 		    strcmp(cur->sess->id, s->id) == 0)
+		{
+			session_destroy(s);
 			return (0);
+		}
 
 		cur = cur->next;
 	}
 
 	n = node_create(s);
 	if (!n)
+	{
+		session_destroy(s);
 		return (0);
+	}
 
 	n->next = st->head;
 	st->head = n;
@@ -68,11 +74,11 @@ int store_add(store_t *st, session_t *s)
 }
 
 /**
- * store_get - retrieves a session by ID
- * @st: session store
- * @id: session ID
+ * store_get - retrieves a session by id
+ * @st: store
+ * @id: session id
  *
- * Return: pointer to matching session, or NULL if not found
+ * Return: matching session, or NULL if not found
  */
 session_t *store_get(store_t *st, const char *id)
 {
@@ -97,11 +103,11 @@ session_t *store_get(store_t *st, const char *id)
 
 /**
  * store_delete - removes a session from the store
- * @st: session store
- * @id: ID of session to remove
- * @out: optional pointer receiving the removed session
+ * @st: store
+ * @id: id of session to delete
+ * @out: optional pointer to receive removed session
  *
- * Return: 1 if deleted, 0 if not found or invalid
+ * Return: 1 on success, 0 if not found
  */
 int store_delete(store_t *st, const char *id, session_t **out)
 {
@@ -168,3 +174,4 @@ void store_destroy(store_t *st)
 
 	st->head = NULL;
 }
+
