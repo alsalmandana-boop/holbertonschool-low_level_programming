@@ -57,7 +57,7 @@ session_t *session_create(const char *id, unsigned int uid,
 }
 
 /**
- * session_set_data - updates the data stored in a session
+ * session_set_data - updates session data
  * @s: session to update
  * @data: new data
  * @data_len: length of new data
@@ -96,7 +96,7 @@ int session_set_data(session_t *s, const unsigned char *data,
 }
 
 /**
- * session_destroy - destroys a session and frees its memory
+ * session_destroy - frees a session and its allocated memory
  * @s: session to destroy
  */
 void session_destroy(session_t *s)
@@ -108,3 +108,4 @@ void session_destroy(session_t *s)
 	free(s->data);
 	free(s);
 }
+
