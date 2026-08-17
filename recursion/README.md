@@ -35,5 +35,5 @@ At the end of this project, you are expected to be able to explain:
 | `6-is_prime_number.c` | `int is_prime_number(int n);` | Returns `1` if the input integer is a prime number, otherwise `0`. |
 
 ## Author
-* **Julien Barbier** (Project Creator)
-* **[اسمك هنا]** - Holberton School / ALX Student
+Dana Alsalman
+Holberton School 
