@@ -16,10 +16,6 @@ int create_file(const char *filename, char *text_content)
 	if (filename == NULL)
 		return (-1);
 
-	/* O_CREAT: إنشاء الملف إذا لم يكن موجوداً */
-	/* O_WRONLY: فتح الملف للكتابة فقط */
-	/* O_TRUNC: تفريغ الملف إذا كان موجوداً من قبل */
-	/* 0600: إعطاء صلاحيات rw------- (قراءة وكتابة للمالك فقط) */
 	fd = open(filename, O_CREAT | O_WRONLY | O_TRUNC, 0600);
 	if (fd == -1)
 		return (-1);
